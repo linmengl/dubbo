@@ -1,6 +1,6 @@
 package com.btc.dubbo.service.impl;
 
-import com.btc.dubbo.UserServerClientInit;
+import com.btc.dubbo.UserServerSDKClientInit;
 import com.btc.dubbo.service.UserSdkService;
 import com.btc.dubbo.service.UserService;
 import org.springframework.beans.factory.annotation.Value;
@@ -36,7 +36,7 @@ public class UserSdkServiceImpl implements UserSdkService{
 		if (userService == null){
 			synchronized (UserSdkServiceImpl.class){
 				if (userService == null){
-					userService = UserServerClientInit.init(applicationName,zkUrl);
+					userService = UserServerSDKClientInit.init(applicationName,zkUrl);
 				}
 			}
 		}
